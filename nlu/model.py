@@ -41,12 +41,16 @@ for i, input in enumerate(inputs):
 #Output Data
 labels = set(outputs)
 
+fwrite = open('labels.txt', 'w', encoding='utf-8')
+
 label2idx = {}
 idx2label = {}
 
 for idx, label in enumerate(labels):
     label2idx[label] = idx
     idx2label[idx] = label
+    fwrite.write(label + '\n')
+fwrite.close()
 
 output_data = []
 
@@ -63,6 +67,9 @@ model.add(Dense(len(output_data), activation='softmax'))
 
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc'])
 model.fit(input_data, output_data, epochs=128)
+
+# Salvar modelo
+model.save('model.h5')
 
 # Classificar texto em uma entidade
 def classify(text):
