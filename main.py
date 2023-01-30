@@ -11,10 +11,34 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[-2].id)
 
+reference = {
+    'time\getTime' : core.SystemInfo.get_time(),
+    'time\getDate' : core.SystemInfo.get_date(),
+    'weather\getWeather' : core.SystemInfo.get_weather(),
+    'open\openNotepad': core.SystemInfo.open_notepad(),
+}
+
 def speak(texto):
     engine.say(texto)
     engine.runAndWait()
 
+def choice(text):
+    entity = classify(text)
+      
+    if entity == 'time\getTime':
+        speak(core.SystemInfo.get_time())
+    elif entity == 'time\getDate':
+        speak(core.SystemInfo.get_date())
+    else:
+        speak(text)
+        print(text)
+
+def teste(text):
+    entity = classify(text)
+
+    for i in reference:
+        if i == entity:
+            speak(reference[entity])
 
 # Reconhecimento de fala
 model = Model('model')
@@ -35,15 +59,8 @@ while True:
         
         if result is not None:
             text = result['text']
-
-            entity = classify(text)
-            
-            if entity == 'time\getTime':
-                speak(core.SystemInfo.get_time())
-            else:
-                speak(text)
-            
             print(text)
+            teste(text)
 
 
 

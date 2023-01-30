@@ -1,4 +1,5 @@
 import datetime
+import os
 
 class SystemInfo:
     def __init__(self):
@@ -9,3 +10,19 @@ class SystemInfo:
         now = datetime.datetime.now()
         answer = f'São {now.hour} horas e {now.minute} minutos.'
         return answer
+
+    @staticmethod
+    def get_date():
+        now = datetime.datetime.now()
+        answer = f'Hoje é dia {now.day} do {now.month} de {now.year}'
+        return answer
+
+    @staticmethod
+    def get_weather():
+        answer = 'A previsão de hoje é de tempo nublado'
+        return answer
+    
+    @staticmethod
+    def open_notepad():
+        os.system('notepad.exe')
+        return 'Abrindo bloco de notas'

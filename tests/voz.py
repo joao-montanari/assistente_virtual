@@ -1,6 +1,6 @@
 import speech_recognition as sr
 import pyttsx3
-import pywhatkit
+#import pywhatkit
 import datetime
 import wikipedia
 
@@ -33,12 +33,12 @@ def run_avila():
     if 'tocar' in command:
         song = command.replace('tocar', '')
         talk('tocando ' + song)
-        pywhatkit.playonyt(song)
+        #pywhatkit.playonyt(song)
     elif 'horas' in command:
         time = datetime.datetime.now().strftime('%H:%M %p')
         talk('O horário atual é de ' + time)
     elif 'o que é' in command:
-        person = command.replace('quem é', '')
+        person = command.replace('o que é', '')
         info = wikipedia.summary(person, 1)
         print(info)
         talk(info)

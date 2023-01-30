@@ -31,10 +31,14 @@ commands:
 
   # Open
   - command:
-    input: Abrir google
+    input: Abrir bloco de notas
     entity: open
-    action:
+    action: openNotepad
   - command:
-    input: Abra youtube
+    input: Abra bloco de notas
     entity: open
-    action:
+    action: openNotepad
+  - command:
+    input: Iniciar bloco de notas
+    entity: open
+    action: openNotepad
