@@ -84,7 +84,3 @@ def classify(text):
     out = model.predict(x)
     idx = out.argmax()
     print(idx2label[idx])
-
-while True:
-    text = input('Digite o texto de entrada: ')
-    classify(text)
