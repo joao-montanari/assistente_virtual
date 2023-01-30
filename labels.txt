@@ -1,4 +1,4 @@
 open\None
 weather\getWeather
-time\getTime
 time\getDate
+time\getTime
