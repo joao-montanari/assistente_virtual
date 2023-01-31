@@ -29,16 +29,4 @@ commands:
     entity: weather
     action: getWeather
 
-  # Open
-  - command:
-    input: Abrir bloco de notas
-    entity: open
-    action: openNotepad
-  - command:
-    input: Abra bloco de notas
-    entity: open
-    action: openNotepad
-  - command:
-    input: Iniciar bloco de notas
-    entity: open
-    action: openNotepad
+  

@@ -15,7 +15,6 @@ reference = {
     'time\getTime' : core.SystemInfo.get_time(),
     'time\getDate' : core.SystemInfo.get_date(),
     'weather\getWeather' : core.SystemInfo.get_weather(),
-    'open\openNotepad': core.SystemInfo.open_notepad(),
 }
 
 def speak(texto):
@@ -33,7 +32,7 @@ def choice(text):
         speak(text)
         print(text)
 
-def teste(text):
+def comparator(text):
     entity = classify(text)
 
     for i in reference:
@@ -60,7 +59,7 @@ while True:
         if result is not None:
             text = result['text']
             print(text)
-            teste(text)
+            comparator(text)
 
 
 

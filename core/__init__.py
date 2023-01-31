@@ -21,8 +21,3 @@ class SystemInfo:
     def get_weather():
         answer = 'A previsão de hoje é de tempo nublado'
         return answer
-    
-    @staticmethod
-    def open_notepad():
-        os.system('notepad.exe')
-        return 'Abrindo bloco de notas'

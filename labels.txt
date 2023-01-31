@@ -1,4 +1,3 @@
+time\getTime
 time\getDate
 weather\getWeather
-time\getTime
-open\openNotepad
