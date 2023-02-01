@@ -31,3 +31,6 @@ class SystemInfo:
             temperature = answer['main']['temp'] - 273.15
             forecast = f'Campinas está com {description} e temperatura de {round(temperature, 2)} graus Celsius'
             return forecast
+        else:
+            error = 'Infelizmente tive um problema para poder fazer a requisição da previsão do tempo. Por favor, tente mais tarde'
+            return error
