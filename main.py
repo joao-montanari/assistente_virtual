@@ -59,7 +59,8 @@ while True:
         if result is not None:
             text = result['text']
             print(text)
-            comparator(text)
+            if text != '':
+                comparator(text)
 
 
 

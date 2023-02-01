@@ -1,4 +1,5 @@
 import datetime
+import requests
 import os
 
 class SystemInfo:
@@ -19,5 +20,14 @@ class SystemInfo:
 
     @staticmethod
     def get_weather():
-        answer = 'A previsão de hoje é de tempo nublado'
-        return answer
+        api_key = '01641dfdfe0c8ae874c192935eaeb262'
+        city = 'campinas'
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&lang=pt_br"
+        response = requests.get(url)
+
+        if response.status_code == 200:
+            answer = response.json()
+            description = answer['weather'][0]['description']
+            temperature = answer['main']['temp'] - 273.15
+            forecast = f'Campinas está com {description} e temperatura de {round(temperature, 2)} graus Celsius'
+            return forecast
