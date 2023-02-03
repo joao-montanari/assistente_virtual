@@ -1,3 +1,5 @@
 time\getTime
 time\getDate
+bosch\boschJob
 weather\getWeather
+bosch\boschCeo

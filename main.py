@@ -15,6 +15,8 @@ reference = {
     'time\getTime' : core.SystemInfo.get_time(),
     'time\getDate' : core.SystemInfo.get_date(),
     'weather\getWeather' : core.SystemInfo.get_weather(),
+    'bosch\\boschCeo' : core.SystemInfo.get_ceo(),
+    'bosch\\boschJob' : core.SystemInfo.get_job()
 }
 
 def speak(texto):
