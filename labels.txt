@@ -1,5 +1,5 @@
+bosch\2
 time\getTime
-time\getDate
-bosch\boschJob
 weather\getWeather
-bosch\boschCeo
+time\getDate
+bosch\11

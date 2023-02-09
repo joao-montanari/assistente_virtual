@@ -33,19 +33,19 @@ commands:
   - command:
     input: O que a bosch faz
     entity: bosch
-    action: boschJob
+    action: 11
   - command:
     input: Em quais ramos a Bosch atua
     entity: bosch
-    action: boschJob
+    action: 11
 
   # Quem é o presidente/CEO da bosch
   - command:
     input: Quem é o presidente da bosch
     entity: bosch
-    action: boschCeo
+    action: 2
   - command:
     input: Quem é o CEO da bosch
     entity: bosch
-    action: boschCeo
+    action: 2
   

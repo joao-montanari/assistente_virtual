@@ -18,8 +18,8 @@ reference = {
     'time\getTime' : core.SystemInfo.get_time(),
     'time\getDate' : core.SystemInfo.get_date(),
     'weather\getWeather' : core.SystemInfo.get_weather(),
-    'bosch\\boschCeo' : core.SystemInfo.get_ceo(),
-    'bosch\\boschJob' : core.SystemInfo.get_job()
+    'bosch\\2' : 'API da Bosch',
+    'bosch\\11' : 'API da Bosch'
 }
 
 def speak(texto):
@@ -31,7 +31,12 @@ def comparator(text):
 
     for i in reference:
         if i == entity:
-            speak(reference[entity])
+            separator = entity.split('\\')
+            if separator[0] == 'bosch':
+                id = separator[1]
+                speak(core.SystemInfo.bosch_info(id))
+            else:
+                speak(reference[entity])
 
 # Reconhecimento de fala
 

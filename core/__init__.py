@@ -35,10 +35,11 @@ class SystemInfo:
             error = 'Infelizmente tive um problema para poder fazer a requisição da previsão do tempo. Por favor, tente mais tarde'
             return error
     
-    def get_ceo():
-        answer = 'O Doutor Stefan Hartung é presidente do conselho de administração e acionista da Robert Bosch, G1 desde 1º de janeiro de 2022. Suas responsabilidades incluem estratégia corporativa, comunicações corporativas, assuntos governamentais e desenvolvimento de tecnologia. Ele também é responsável pela pesquisa corporativa, engenharia avançada, gerenciamento de qualidade corporativa e pelo departamento corporativo de Fabricação de Tecnologia. Além disso, ele é responsável pela subsidiária Bosch Healthcare Solutions e pelas operações da Bosch na China.'
-        return answer
-    
-    def get_job():
-        answer = 'A Bosch atua em diferentes ramos da industria. Entre elas ela se contra desenvolvendo acessórios e ferramentas elétricas, negócios industriais, sistemas de segurança, soluções técnicas para manufatura, tecnologia de acionamento e controle, soluções de software e ainda atuando entre outros ramos.'
-        return answer
+    def bosch_info(id):
+        response = requests.get(f'http://localhost:8000/answer/{id}')
+        if response.status_code == 200:
+            call = response.json()
+            answer = call['response']
+            return answer
+        else:
+            error = 'Infelizmente tive problema ao fazer a requisição das resposta da pergunta. Por favor, tente mais tarde'
