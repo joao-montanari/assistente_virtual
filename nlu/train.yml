@@ -1,17 +1,17 @@
 commands:
   # Horas
   - command:
-    input: Que horas são?
+    input: Que horas são
     entity: time
     action: getTime
   - command:
-    input: Me diga as horas.
+    input: Me diga as horas
     entity: time
     action: getTime
   
   # Data
   - command:
-    input: Qual é a data de hoje?
+    input: Qual é a data de hoje
     entity: time
     action: getDate
   - command:
@@ -25,19 +25,19 @@ commands:
     entity: weather
     action: getWeather
   - command:
-    input: Como está o clima?
+    input: Como está o clima
     entity: weather
     action: getWeather
 
   # O que a Bosch faz
   - command:
-    input: O que a bosch faz
+    input: Quem é o presidente da planta da américa latina
     entity: bosch
-    action: 11
+    action: 1
   - command:
-    input: Em quais ramos a Bosch atua
+    input: Quem é o presidente da Bosch américa latina
     entity: bosch
-    action: 11
+    action: 1
 
   # Quem é o presidente/CEO da bosch
   - command:
@@ -49,3 +49,124 @@ commands:
     entity: bosch
     action: 2
   
+  # Quem foi Robert Bosch
+  - command:
+    input: Quem foi Robert Bosch
+    entity: bosch
+    action: 3
+  - command:
+    input: Quem era Robert Bosch
+    entity: bosch
+    action: 3
+  - command:
+    input: Robert Bosch
+    entity: bosch
+    action: 3
+
+  # Qual é a história da Bosch
+  - command:
+    input: Qual é a história da Bosch
+    entity: bosch
+    action: 4
+  - command:
+    input: história da Bosch
+    entity: bosch
+    action: 4
+  
+  # Onde devolvo o cracha provisório
+  - command:
+    input: Onde devolvo o cracha provisório
+    entity: bosch
+    action: 5
+  - command:
+    input: onde coloco o cracha provisório
+    entity: bosch
+    action: 5
+  - command:
+    input: cracha provisório
+    entity: bosch
+    action: 5
+
+  # O que é VsDia
+  - command:
+    input: O que é VsDia
+    entity: bosch
+    action: 6
+  - command:
+    input: do que se trata o VsDia
+    entity: bosch
+    action: 6
+  - command:
+    input: VsDia
+    entity: bosch
+    action: 6
+
+  # A quantos anos a Bosch está no Brasil
+  - command:
+    input: A quantos anos a Bosch está no Brasil
+    entity: bosch
+    action: 7
+  - command:
+    input: desde quantos a Bosch está no Brasil
+    entity: bosch
+    action: 7
+  - command:
+    input: Bosch no Brasil
+    entity: bosch
+    action: 7
+
+  # O que significa ETS
+  - command:
+    input: O que significa ETS
+    entity: bosch
+    action: 8
+  - command:
+    input: O que é ETS
+    entity: bosch
+    action: 8
+  - command:
+    input: O que a ETS faz
+    entity: bosch
+    action: 8
+  
+  # Quantas Bosch existem no mundo
+  - command:
+    input: Quantas Bosch existem no mundo
+    entity: bosch
+    action: 9
+  - command:
+    input: número de Bosch no mundo
+    entity: bosch
+    action: 9
+  - command:
+    input: quantidade de Bosch no mundo
+    entity: bosch
+    action: 9
+
+  # Quantos colaboradores da Bosch existem no Brasil
+  - command:
+    input: Quantos colaboradores da Bosch existem no Brasil
+    entity: bosch
+    action: 10
+  - command:
+    input: quantidade de colaboradores no Brasil
+    entity: bosch
+    action: 10
+  - command:
+    input: quantidade de funcionários da Bosch no Brasil
+    entity: bosch
+    action: 10
+  
+  # O que a Bosch faz
+  - command:
+    input: O que a Bosch faz
+    entity: bosch
+    action: 11
+  - command:
+    input: O que a Bosch produz
+    entity: bosch
+    action: 11
+  - command:
+    input: Em quais ramos da industria a Bosch atua
+    entity: bosch
+    action: 11

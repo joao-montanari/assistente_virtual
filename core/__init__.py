@@ -42,4 +42,5 @@ class SystemInfo:
             answer = call['response']
             return answer
         else:
-            error = 'Infelizmente tive problema ao fazer a requisição das resposta da pergunta. Por favor, tente mais tarde'
+            error = 'Infelizmente tive um problema para poder fazer a requisição da resposta. Por favor, tente mais tarde'
+            return error

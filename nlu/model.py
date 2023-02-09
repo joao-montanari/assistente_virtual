@@ -66,7 +66,7 @@ model.add(LSTM(128))
 model.add(Dense(len(output_data), activation='softmax'))
 
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc'])
-model.fit(input_data, output_data, epochs=128)
+model.fit(input_data, output_data, epochs=8000)
 
 # Salvar modelo
 model.save('model.h5')
