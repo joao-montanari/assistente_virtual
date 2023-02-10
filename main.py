@@ -18,18 +18,11 @@ reference = {
     'time\getTime' : core.SystemInfo.get_time(),
     'time\getDate' : core.SystemInfo.get_date(),
     'weather\getWeather' : core.SystemInfo.get_weather(),
-    'bosch\\1' : 'API da Bosch',
-    'bosch\\2' : 'API da Bosch',
-    'bosch\\3' : 'API da Bosch',
-    'bosch\\4' : 'API da Bosch',
-    'bosch\\5' : 'API da Bosch',
-    'bosch\\6' : 'API da Bosch',
-    'bosch\\7' : 'API da Bosch',
-    'bosch\\8' : 'API da Bosch',
-    'bosch\\9' : 'API da Bosch',
-    'bosch\\10' : 'API da Bosch',
-    'bosch\\11' : 'API da Bosch',
 }
+
+for i in range(1, 12):
+    reference.update({ f'bosch\\{i}' : 'API da Bosch' })
+print(reference)
 
 def speak(texto):
     engine.say(texto)
