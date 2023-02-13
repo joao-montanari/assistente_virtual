@@ -11,18 +11,8 @@ from nlu.classifier import classify
 # Síntese de fala
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[-2].id)
+engine.setProperty('voice', voices[-1].id)
 listener = sr.Recognizer()
-
-reference = {
-    'time\getTime' : core.SystemInfo.get_time(),
-    'time\getDate' : core.SystemInfo.get_date(),
-    'weather\getWeather' : core.SystemInfo.get_weather(),
-}
-
-for i in range(1, 12):
-    reference.update({ f'bosch\\{i}' : 'API da Bosch' })
-print(reference)
 
 def speak(texto):
     engine.say(texto)
@@ -30,15 +20,17 @@ def speak(texto):
 
 def comparator(text):
     entity = classify(text)
+    separator = entity.split('\\')
 
-    for i in reference:
-        if i == entity:
-            separator = entity.split('\\')
-            if separator[0] == 'bosch':
-                id = separator[1]
-                speak(core.SystemInfo.bosch_info(id))
-            else:
-                speak(reference[entity])
+    if entity == 'time\getTime':
+        speak(core.SystemInfo.get_time())
+    elif entity == 'time\getDate':
+        speak(core.SystemInfo.get_date())
+    elif entity == 'weather\getWeather':
+        speak(core.SystemInfo.get_weather())
+    elif separator[0] == 'bosch':
+        id = separator[1]
+        speak(core.SystemInfo.bosch_info(id))
 
 # Reconhecimento de fala
 
