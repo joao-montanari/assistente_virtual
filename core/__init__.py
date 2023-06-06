@@ -1,6 +1,13 @@
 import datetime
 import requests
 import os
+from urllib import request
+
+# proxy = request.ProxyHandler({'http': 'http://slj4ca:m0nt%40n'+'%40'+'r11024@proxy.br.bosch.com:8080'})
+# auth = request.HTTPBasicAuthHandler()
+# opener = request.build_opener(proxy, auth, request.HTTPHandler)
+# request.install_opener(opener)
+
 
 class SystemInfo:
     def __init__(self):
@@ -36,7 +43,7 @@ class SystemInfo:
             return error
     
     def bosch_info(id):
-        response = requests.get(f'http://localhost:8000/answer/{id}')
+        response = requests.get(f'http://localhost:5000/answer/{id}')
         if response.status_code == 200:
             call = response.json()
             answer = call['response']

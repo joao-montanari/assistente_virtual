@@ -4,6 +4,8 @@ import pyaudio
 import pyttsx3
 import json
 import speech_recognition as sr
+import requests
+from time import sleep
 
 import core
 from nlu.classifier import classify
@@ -57,13 +59,39 @@ def comparator(text):
 #             if text != '':
 #                 comparator(text)
 
+# /////////////////////////////////////////////////////////////////////////////
+
+# while True:
+#     try:
+#         with sr.Microphone() as source:
+#             print('Entrada na condição')
+#             voice = listener.listen(source)
+#             command = listener.recognize_google(voice, language='PT-BR')
+#             command =  command.lower()
+#             if command != []:
+#                 print('CAPTURA')
+#                 print(command)
+#                 comparator(command)
+#     except:
+#         pass
+
+
+response = requests.get('http://localhost:7000/question/')
+call = response.json()
+last_id = response[-1]
+
 while True:
-    try:
-        with sr.Microphone() as source:
-            voice = listener.listen(source)
-            command = listener.recognize_google(voice, language='PT-BR')
-            command =  command.lower()
-            if command != []:
-                comparator(command)
-    except:
-        pass
+    sleep(1)
+    response = requests.get('http://localhost:7000/question/')
+    call = response.json()
+    verif = call[-1]
+    if verif != last_id:
+        last_id = verif
+        response = requests.get(f"http://localhost:7000/question/{last_id['id']}")
+        call = response.json()
+        question = call['userQuestion']
+        comparator(question)
+
+print('CHAMADA DO COMPARADOR')
+comparator('robert bosch')
+print('PASSAGEM PELO COMPARADOR')
