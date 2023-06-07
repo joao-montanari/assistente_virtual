@@ -13,7 +13,7 @@ from nlu.classifier import classify
 # Síntese de fala
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[-1].id)
+engine.setProperty('voice', voices[-2].id)
 listener = sr.Recognizer()
 
 def speak(texto):
@@ -78,7 +78,7 @@ def comparator(text):
 
 response = requests.get('http://localhost:7000/question/')
 call = response.json()
-last_id = response[-1]
+last_id = call[-1]
 
 while True:
     sleep(1)
